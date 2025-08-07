@@ -45,7 +45,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.3.1</version>
                 <configuration>
-                    <outputDirectory>E:\חן\spiget server\plugins</outputDirectory>
+                    <outputDirectory>${user.home}/Server/plugins</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
@@ -53,6 +53,16 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
+                <excludes>
+                    <exclude>house.schem</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>house.schem</include>
+                </includes>
+                <filtering>false</filtering>
             </resource>
         </resources>
     </build>
