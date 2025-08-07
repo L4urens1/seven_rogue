@@ -37,14 +37,25 @@ public class worldEditApiTest implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
         if (sender instanceof Player p) {
 
-           final File file =new File( Plugin.getDataFolder(),"house.schem");
-           final ClipboardFormat format = ClipboardFormats.findByFile(file);
+            final File file = new File(Plugin.getDataFolder(), "house.schem");
 
-           final Location location = p.getLocation();
-           final World world = BukkitAdapter.adapt(location.getWorld());
+            if (!file.exists() || file == null) {
+                p.sendMessage("§cSchematic file not found at: " + file.getAbsolutePath());
+                return true;
+            }
+            final ClipboardFormat format = ClipboardFormats.findByFile(file.getParentFile());
+            if (format == null) {
+                p.sendMessage(file.toString());
+                p.sendMessage(file.getAbsoluteFile().toString());
+                p.sendMessage("§cCould not determine schematic format.");
+                return true;
+            }
 
-            try(final ClipboardReader reader = format.getReader(new FileInputStream(file));
-                final EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
+            final Location location = p.getLocation();
+            final World world = BukkitAdapter.adapt(location.getWorld());
+
+            try (final ClipboardReader reader = format.getReader(new FileInputStream(file));
+                 final EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
 
                 final Clipboard clipboard = reader.read();
                 final Operation operation = new ClipboardHolder(clipboard)
