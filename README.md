@@ -8,3 +8,7 @@ to setup u need a spigot server that is runing on mine craft viresion 1.21.5 and
 for now just 
 
 sevenruego.minekeep.gg
+
+if the server dosnt work send me a dm in discord l4urens_ 
+
+i showd be in the server but most of the time i wont react
