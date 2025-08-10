@@ -6,4 +6,5 @@ to setup u need a spigot server that is runing on mine craft viresion 1.21.5 and
 
 # SERVERS
 of now just 
+
 sevenruego.minekeep.gg
