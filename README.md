@@ -3,3 +3,7 @@ this is a spigot plugin(for minevraft 1.21.5) that makes minecraft in to a rogue
 
 # SETUP
 to setup u need a spigot server that is runing on mine craft viresion 1.21.5 and put the plugin in the plugin folder
+
+# SERVERS
+of now just 
+sevenruego.minekeep.gg
