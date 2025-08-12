@@ -1,0 +1,20 @@
+name: seven
+version: '${project.version}'
+main: me._l4urens_.seven.Seven
+api-version: '1.21'
+
+
+depends:
+  - WorldEdit
+
+commands:
+  boomStart:
+    description: 7boom test
+    usage: /<command>
+  next:
+    description: next
+
+  boom:
+    description: boom
+  apiTest:
+    description: WorldEdit api test
