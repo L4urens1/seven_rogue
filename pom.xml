@@ -49,22 +49,23 @@
                 </configuration>
             </plugin>
         </plugins>
-        <resources>
+      <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
                 <excludes>
-                    <exclude>house.schem</exclude>
+                    <exclude>*.schem</exclude>
                 </excludes>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
-                    <include>house.schem</include>
+                    <include>*.schem</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>
         </resources>
+
     </build>
 
     <repositories>
