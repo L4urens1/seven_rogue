@@ -25,7 +25,12 @@ public class worldEditApiTest implements CommandExecutor {
 
             final Location location = p.getLocation();
 
-            manager.pasthouse(location);
+
+            final long start = System.currentTimeMillis();
+
+            manager.pastSchem(location,p,location.getBlockX(), location.getBlockY(), location.getBlockZ(),"house.schem");
+
+            p.sendMessage("§aPasted schematic! Took %dms".formatted(System.currentTimeMillis() - start));
 
 
         }

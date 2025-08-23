@@ -15,41 +15,55 @@ import com.sk89q.worldedit.session.ClipboardHolder;
 import com.sk89q.worldedit.world.World;
 import me._l4urens_.seven.Seven;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class schemticmanger {
     private final Seven Plugin;
 
     public schemticmanger(Seven plugin) {
         Plugin = plugin;
-        this.loadhouse();
+        this.loadFill("house.schem");
+        this.loadFill("path1.schem");
+        this.loadFill("path2.schem");
 
     }
 
     private Clipboard clipboard;
+    private Map<String, Clipboard> clipboardl = new HashMap<>();
 
-    public void loadhouse(){
-        final File file = new File(Plugin.getDataFolder(), "house.schem");
+    public void loadFill(String fillName){
+        final File file = new File(Plugin.getDataFolder(), fillName);
         ClipboardFormat format = ClipboardFormats.findByFile(file);
 
         try (final ClipboardReader reader = format.getReader(new FileInputStream(file))) {
 
-            this.clipboard = reader.read();
+//            this.clipboard =reader.read();
+
+
+            this.clipboardl.put(fillName,reader.read());
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-    public void pasthouse(Location location){
+    public void pastSchem(Location location, Player p, Integer x,Integer y,Integer z,String schemName){
+
+
         final World world = BukkitAdapter.adapt(location.getWorld());
         try (final EditSession editSession = WorldEdit.getInstance().newEditSession(world)) {
-            final Operation operation = new ClipboardHolder(clipboard)
+            final Operation operation = new ClipboardHolder(clipboardl.get(schemName))
                     .createPaste(editSession)
-                    .to(BlockVector3.at(location.getBlockX(), location.getBlockY(), location.getBlockZ()))
+                    .to(BlockVector3.at(x, y, z))
                     .build();
+            p.sendMessage(clipboardl.toString());
             Operations.complete(operation);
 
         }  catch (WorldEditException e) {
