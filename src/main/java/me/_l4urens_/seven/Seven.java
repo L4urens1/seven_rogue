@@ -11,8 +11,10 @@ public final class Seven extends JavaPlugin {
     @Override
     public void onLoad() {
         saveResource("house.schem", false);
-        saveResource("path1.schem", false);
-        saveResource("path2.schem", false);
+        saveResource("pathx1.schem", false);
+        saveResource("pathx2.schem", false);
+        saveResource("pathz1.schem", false);
+        saveResource("pathz2.schem", false);
     }
     @Override
     public void onEnable() {

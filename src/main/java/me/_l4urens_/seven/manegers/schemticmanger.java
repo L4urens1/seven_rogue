@@ -31,8 +31,10 @@ public class schemticmanger {
     public schemticmanger(Seven plugin) {
         Plugin = plugin;
         this.loadFill("house.schem");
-        this.loadFill("path1.schem");
-        this.loadFill("path2.schem");
+        this.loadFill("pathx1.schem");
+        this.loadFill("pathx2.schem");
+        this.loadFill("pathz1.schem");
+        this.loadFill("pathz2.schem");
 
     }
 
@@ -63,7 +65,7 @@ public class schemticmanger {
                     .createPaste(editSession)
                     .to(BlockVector3.at(x, y, z))
                     .build();
-            p.sendMessage(clipboardl.toString());
+//            p.sendMessage(clipboardl.toString());
             Operations.complete(operation);
 
         }  catch (WorldEditException e) {
