@@ -1,4 +1,4 @@
-![Hackatime Badge]([https://hackatime.hackclub.com/api/v1/badge/U097QT0KQ3B/L4urens1/seven_rogue](https://github-readme-stats.hackclub.dev/api/wakatime?username=16658&api_domain=hackatime.hackclub.com&theme=algolia&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=8))
+![Hackatime Badge](https://hackatime.hackclub.com/api/v1/badge/U097QT0KQ3B/L4urens1/seven_rogue)
 # seven_rogue
 this is a spigot plugin(for minevraft 1.21.5) that makes minecraft in to a rogue like that is based on the game we play in my cuntri that is celd 7 boom that u count alowd withe a frinde and whan it is your turn if the number u are going to say contins 7 or is a duplicet of 7 u say booom
 
